@@ -11,6 +11,7 @@ job('hello-world') {
     }
 
     steps {
-        shell("Hello \$\{NAME\}.")
+        shell('''#!/bin/bash
+echo \"Hello $NAME\".''')
     }
 }
