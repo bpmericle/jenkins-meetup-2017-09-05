@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
 def scmUrl = 'https://github.com/bpmericle/jenkins-meetup-2017-09-05.git'
-def scmCredentialsId = 'github'
 def scmBranch = 'master'
 def pathToScript = 'src/main/jobs/pipelines/Jenkinsfile'
 
@@ -21,7 +20,6 @@ pipelineJob('hello-world-pipeline') {
                 git {
                     remote {
                         url(scmUrl)
-                        credentials(scmCredentialsId)
                     }
                     branch(scmBranch)
                 }
