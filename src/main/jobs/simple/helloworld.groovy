@@ -11,6 +11,6 @@ job('hello-world') {
     }
 
     steps {
-        shell("Hello ${params.NAME}.")
+        shell("Hello \$\{NAME\}.")
     }
 }
