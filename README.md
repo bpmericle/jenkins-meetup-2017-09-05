@@ -27,3 +27,12 @@ This repository contains code demoed at the DFW Jenkins Area Meetup on September
         - Action for removed jobs: Delete
         - Action for removed views: Delete
         - Action for removed config files: Delete
+
+6. Setup 'dsl-lib' Library
+
+    - Manage Jenkins > Configure System > Global Pipeline Libraries > Add
+        - Library
+            - Name: dsl-lib
+            - Default version: master
+        - Retrieval Method
+            - Modern SCM > Git > Project Repository: https://github.com/bpmericle/jenkins-meetup-2017-09-05.git
