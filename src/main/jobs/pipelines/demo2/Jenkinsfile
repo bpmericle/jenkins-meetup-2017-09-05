@@ -1,0 +1,58 @@
+#!/usr/bin/env groovy
+@Library(['dsl-lib']) _
+
+pipeline {
+    agent none
+    options {
+        timestamps()
+    }
+    stages {
+        stage('Build') {
+            steps {
+                executeBuildStageSteps()
+            }
+            post {
+                success {
+                    executeBuildStageResultSteps()
+                }
+                failure {
+                    executeBuildStageResultSteps()
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                executeTestStageSteps()
+            }
+            post {
+                success {
+                    executeTestStageResultSteps()
+                }
+                failure {
+                    executeTestStageResultSteps()
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                executeDeployStageSteps()
+            }
+            post {
+                success {
+                    executeDeployStageResultSteps()
+                }
+                failure {
+                    executeDeployStageResultSteps()
+                }
+            }
+        }
+    }
+    post {
+        success {
+            executePipelineResultSteps()
+        }
+        failure {
+            executePipelineResultSteps()
+        }
+    }
+}
