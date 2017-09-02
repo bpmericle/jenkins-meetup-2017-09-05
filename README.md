@@ -16,7 +16,6 @@ Manage Jenkins > Configure Global Security > Access Control for Builds > Add > P
 
 5. Create seed freestyle job
 Source Code Management > Git > Repositories > Repository URL: https://github.com/bpmericle/jenkins-meetup-2017-09-05.git
-
 Build > Process Job DSLs
   - Look on Filesystem > DSL Scripts: src/main/jobs/helloworld.groovy
   - Use Groovy Sandbox: checked
