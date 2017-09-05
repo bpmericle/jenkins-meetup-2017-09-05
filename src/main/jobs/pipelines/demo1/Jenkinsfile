@@ -13,10 +13,10 @@ pipeline {
             }
             post {
                 success {
-                    echo("Build stage completed with result 'success'.")
+                    echo("Build stage completed with result 'SUCCESS'.")
                 }
                 failure {
-                    echo("Build stage completed with result 'failure'.")
+                    echo("Build stage completed with result 'FAILURE'.")
                 }
             }
         }
@@ -27,10 +27,10 @@ pipeline {
             }
             post {
                 success {
-                    echo("Test stage completed with result 'success'.")
+                    echo("Test stage completed with result 'SUCCESS'.")
                 }
                 failure {
-                    echo("Test stage completed with result 'failure'.")
+                    echo("Test stage completed with result 'FAILURE'.")
                 }
             }
         }
@@ -41,20 +41,20 @@ pipeline {
             }
             post {
                 success {
-                    echo("Deploy stage completed with result 'success'.")
+                    echo("Deploy stage completed with result 'SUCCESS'.")
                 }
                 failure {
-                    echo("Deploy stage completed with result 'failure'.")
+                    echo("Deploy stage completed with result 'FAILURE'.")
                 }
             }
         }
     }
     post {
         success {
-            echo("Pipeline completed for ${NAME} with result 'success'.")
+            echo("Pipeline completed for ${NAME} with result 'SUCCESS'.")
         }
         failure {
-            echo("Pipeline completed for ${NAME} with result 'failure'.")
+            echo("Pipeline completed for ${NAME} with result 'FAILURE'.")
         }
     }
 }
