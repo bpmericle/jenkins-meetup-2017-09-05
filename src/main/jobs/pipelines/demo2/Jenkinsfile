@@ -13,10 +13,10 @@ pipeline {
             }
             post {
                 success {
-                    executeBuildStageResultSteps()
+                    executeBuildStageResultSteps('SUCCESS')
                 }
                 failure {
-                    executeBuildStageResultSteps()
+                    executeBuildStageResultSteps('FAILURE')
                 }
             }
         }
@@ -26,10 +26,10 @@ pipeline {
             }
             post {
                 success {
-                    executeTestStageResultSteps()
+                    executeTestStageResultSteps('SUCCESS')
                 }
                 failure {
-                    executeTestStageResultSteps()
+                    executeTestStageResultSteps('FAILURE')
                 }
             }
         }
@@ -39,20 +39,20 @@ pipeline {
             }
             post {
                 success {
-                    executeDeployStageResultSteps()
+                    executeDeployStageResultSteps('SUCCESS')
                 }
                 failure {
-                    executeDeployStageResultSteps()
+                    executeDeployStageResultSteps('FAILURE')
                 }
             }
         }
     }
     post {
         success {
-            executePipelineResultSteps()
+            executePipelineResultSteps('SUCCESS')
         }
         failure {
-            executePipelineResultSteps()
+            executePipelineResultSteps('FAILURE')
         }
     }
 }
